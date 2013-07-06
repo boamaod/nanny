@@ -1,21 +1,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Yannis Kaskamanidis <kiolalis@gmail.com>, 2010.
+# keratea <dmtrs32@gmail.com>, 2013.
+# Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-27 14:08+0200\n"
-"PO-Revision-Date: 2010-06-20 10:44+0300\n"
-"Last-Translator: Yannis Kaskamanidis <kiolalis@gmail.com>\n"
-"Language-Team: Ελληνικά <kde-i18n-doc@kde.org>\n"
-"Language: \n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=nanny&"
+"keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-07-07 13:15+0000\n"
+"PO-Revision-Date: 2013-07-06 08:28+0300\n"
+"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
+"Language-Team: team@gnome.gr\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:32
@@ -45,7 +48,7 @@ msgstr "ενήλικες"
 msgid "Sites containing adult material such as swearing but not porn"
 msgstr ""
 "Ιστότοποι που περιέχουν υλικό για ενήλικες, όπως βλασφημίες, όχι όμως "
-"πορνογραφικό υλικό."
+"πορνογραφικό υλικό"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:38
@@ -55,16 +58,17 @@ msgstr "επιθετικότητα"
 #: ../client/common/src/Categories.py:38
 msgid "Similar to violence but more promoting than depicting"
 msgstr ""
-"Σχετικά με τη βία, περισσότερο με την προώθηση παρά με την περιγραφή της"
+"Παρόμοια με τη βία, αλλά περισσότερο με την προώθηση παρά με την περιγραφή "
+"της"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:40
 msgid "antispyware"
-msgstr "antispyware"
+msgstr "αντικατασκοπευτικό λογισμικό"
 
 #: ../client/common/src/Categories.py:40
 msgid "Sites that remove spyware"
-msgstr "Ιστότοποι που αφαιρούν το spyware"
+msgstr "Ιστότοποι που αφαιρούν κατασκοπευτικό λογισμικό"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:42
@@ -82,7 +86,7 @@ msgstr "αστρολογία"
 
 #: ../client/common/src/Categories.py:44
 msgid "Astrology websites"
-msgstr "Ιστότοποι σχετικοί με την αστρολογία"
+msgstr "Ιστότοποι αστρολογίας"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:46
@@ -91,21 +95,21 @@ msgstr "ήχος - βίντεο"
 
 #: ../client/common/src/Categories.py:46
 msgid "Sites with audio or video downloads"
-msgstr "Ιστότοποι με δυνατότητες λήψης ήχου ή/και βίντεο"
+msgstr "Ιστότοποι με μεταφορτώσεις ήχου ή βίντεο"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:48
 msgid "banking"
-msgstr "τράπεζες"
+msgstr "τραπεζικά"
 
 #: ../client/common/src/Categories.py:48
 msgid "Banking websites"
-msgstr "Ιστότοποι για τραπεζικές εργασίες"
+msgstr "Τραπεζικοί ιστότοποι"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:50
 msgid "beerliquorinfo"
-msgstr "αλκοόλ"
+msgstr "πληροφορίες οινοπνευματωδών"
 
 #: ../client/common/src/Categories.py:50
 msgid "Sites with information only on beer or liquors"
@@ -114,7 +118,7 @@ msgstr "Ιστότοποι μόνο με πληροφορίες για μπύρ�
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:52
 msgid "beerliquorsale"
-msgstr "αλκοόλ"
+msgstr "πώληση οινοπνευματωδών"
 
 #: ../client/common/src/Categories.py:52
 msgid "Sites with beer or liquors for sale"
@@ -123,11 +127,11 @@ msgstr "Ιστότοποι που πωλούν μπύρες ή οινοπνευ�
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:54
 msgid "blog"
-msgstr "blog"
+msgstr "ιστολόγιο"
 
 #: ../client/common/src/Categories.py:54
 msgid "Journal/Diary websites"
-msgstr "Ιστότοποι για τη σύνταξη ημερολογίων"
+msgstr "Ιστότοποι περιοδικών/ημερολογίων"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:56
@@ -136,12 +140,12 @@ msgstr "κινητά τηλέφωνα"
 
 #: ../client/common/src/Categories.py:56
 msgid "stuff for mobile/cell phones"
-msgstr "Υλικό για κινητά τηλέφωνα"
+msgstr "υλικό για κινητά τηλέφωνα"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:58
 msgid "chat"
-msgstr "συνομιλία (chat)"
+msgstr "συνομιλία"
 
 #: ../client/common/src/Categories.py:58
 msgid "Sites with chat rooms etc"
@@ -172,7 +176,7 @@ msgstr "ένδυση"
 
 #: ../client/common/src/Categories.py:64
 msgid "Sites about and selling clothing"
-msgstr "Ιστότοποι σχετικοί με την ένδυση"
+msgstr "Ιστότοποι σχετικοί με την πώληση ένδυσης"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:66
@@ -190,7 +194,7 @@ msgstr "μαγειρική"
 
 #: ../client/common/src/Categories.py:68
 msgid "Sites about cooking et al"
-msgstr "Ιστότοποι σχετικοί με τη μαγειρική"
+msgstr "Ιστότοποι μαγειρικής κ.α."
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:70
@@ -199,7 +203,7 @@ msgstr "συναντήσεις γνωριμίας"
 
 #: ../client/common/src/Categories.py:70
 msgid "Sites about dating"
-msgstr "Ιστότοποι σχετικά με συναντήσεις γνωριμίας"
+msgstr "Ιστότοποι συναντήσεων γνωριμίας"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:72
@@ -211,20 +215,20 @@ msgid ""
 "Sites containing screen savers, backgrounds, cursers, pointers. desktop "
 "themes and similar timewasting and potentially dangerous content"
 msgstr ""
-"Ιστότοποι με υλικό για την προφύλαξη της οθόνης, εικόνες παρασκηνίου, "
-"εμφάνιση κέρσορα, θέματα για την επιφάνεια εργασίας και άλλα συναφή, οι "
-"οποίοι συχνά περιέχουν και επικίνδυνο περιεχόμενο. "
+"Ιστότοποι που περιέχουν προφυλάξεις οθόνης, παρασκήνια, δρομείς, δείκτες, "
+"θέματα επιφάνειας εργασίας και άλλα συναφή χρονοβόρα και με επικίνδυνο "
+"δυνητικά περιεχόμενο."
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:74
 msgid "dialers"
-msgstr "dialers"
+msgstr "κακόβουλες κλησεις"
 
 #: ../client/common/src/Categories.py:74
 msgid "Sites with dialers such as those for pornography or trojans"
 msgstr ""
-"Ιστότοποι με dialers, όπως αυτούς που σχετίζονται με την πορνογραφία ή τους "
-"'Δούρειους Ίππους' (trojans)."
+"Ιστότοποι με κακόβουλες κλήσεις (dialers), όπως αυτούς που σχετίζονται με "
+"την πορνογραφία ή τους δούρειους ίππους."
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:76
@@ -242,7 +246,7 @@ msgstr "ηλεκτρονικό εμπόριο"
 
 #: ../client/common/src/Categories.py:78
 msgid "Sites that provide online shopping"
-msgstr "Ιστότοποι για την πραγματοποίηση ηλεκτρονικών αγορών μέσω διαδικτύου"
+msgstr "Ιστότοποι για την πραγματοποίηση αγορών μέσω διαδικτύου"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:80
@@ -251,8 +255,7 @@ msgstr "ψυχαγωγία"
 
 #: ../client/common/src/Categories.py:80
 msgid "Sites that promote movies, books, magazine, humor"
-msgstr ""
-"Ιστότοποι που προωθούν κινηματογραφικές ταινίες, βιβλία, περιοδικά, κλπ."
+msgstr "Ιστότοποι που προωθούν ταινίες, βιβλία, περιοδικά, αστεϊσμούς"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:82
@@ -279,9 +282,7 @@ msgstr "τζόγος"
 
 #: ../client/common/src/Categories.py:86
 msgid "Gambling sites including stocks and shares"
-msgstr ""
-"Ιστότοποι σχετικοί με τη χαρτοπαιξία που περιέχουν πληροφορίες για κεφάλαια "
-"και μετοχές"
+msgstr "Ιστότοποι για τον τζόγο και συμπεριλαμβάνουν μετοχές"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:88
@@ -299,7 +300,7 @@ msgstr "κηπουρική"
 
 #: ../client/common/src/Categories.py:90
 msgid "Gardening sites"
-msgstr "Ιστότοποι σχετικοί με την κηπουρική"
+msgstr "Ιστότοποι κηπουρικής"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:92
@@ -317,25 +318,25 @@ msgstr "όπλα"
 
 #: ../client/common/src/Categories.py:94
 msgid "Sites with guns"
-msgstr "Ιστότοποι σχετικά με όπλα"
+msgstr "Ιστότοποι με όπλα"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:96
 msgid "hacking"
-msgstr "hacking"
+msgstr "εισβολή"
 
 #: ../client/common/src/Categories.py:96
 msgid "Hacking/cracking information"
-msgstr "Πληροφορίες για hacking/cracking"
+msgstr "Πληροφορίες για εισβολή/σπάσιμο"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:98
 msgid "homerepair"
-msgstr "ανακαίνιση σπιτιού"
+msgstr "οικιακές επισκευές"
 
 #: ../client/common/src/Categories.py:98
 msgid "Sites about home repair"
-msgstr "Ιστότοποι σχετικοί με την ανακαίνιση σπιτιού"
+msgstr "Ιστότοποι για οικιακές επισκευές"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:100
@@ -345,7 +346,7 @@ msgstr "υγιεινή"
 #: ../client/common/src/Categories.py:100
 msgid "Sites about hygiene and other personal grooming related stuff"
 msgstr ""
-"Ιστότοποι σχετικοί με την υγιεινή και άλλες υπηρεσίες προσωπικής περιποίησης"
+"Ιστότοποι σχετικοί με την υγιεινή και άλλες υλικό προσωπικής περιποίησης"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:102
@@ -356,9 +357,8 @@ msgstr "άμεσα μηνύματα"
 msgid ""
 "Sites that contain messenger client download and web-based messaging sites"
 msgstr ""
-"Ιστότοποι που περιέχουν προγράμματα άμεσων μηνυμάτων, που μπορείτε να "
-"χρησιμοποιήσετε είτε κατεβάζοντάς τα στον υπολογιστή σας είτε απευθείας μέσω "
-"διαδικτύου"
+"Ιστότοποι που περιέχουν μεταφόρτωση πελάτη μηνυμάτων και τόπους μηνυμάτων με "
+"βάση τον ιστό"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:104
@@ -367,7 +367,7 @@ msgstr "κοσμήματα"
 
 #: ../client/common/src/Categories.py:104
 msgid "Sites about and selling jewelry"
-msgstr "Ιστότοποι με πληροφορίες ή και δυνατότητες αγορές κοσμημάτων"
+msgstr "Ιστότοποι για κοσμήματα"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:106
@@ -381,7 +381,7 @@ msgstr "Ιστότοποι για εξεύρεση εργασίας"
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:108
 msgid "kidstimewasting"
-msgstr "ελεύθερος χρόνος παιδιών"
+msgstr "σπατάλη χρόνου παιδιών"
 
 #: ../client/common/src/Categories.py:108
 msgid "Sites kids often waste time on"
@@ -394,12 +394,12 @@ msgstr "ηλεκτρονική αλληλογραφία"
 
 #: ../client/common/src/Categories.py:110
 msgid "Webmail and email sites"
-msgstr "Ιστότοποι σχετικοί με την ηλεκτρονική αλληλογραφία"
+msgstr "Ιστότοποι και τόποι ηλεκτρονικής αλληλογραφίας"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:112
 msgid "marketingware"
-msgstr "προώθηση εμπορικών αγαθών"
+msgstr "εμπορικά αγαθά"
 
 #: ../client/common/src/Categories.py:112
 msgid "Sites about marketing products"
@@ -408,20 +408,20 @@ msgstr "Ιστότοποι σχετικοί με εμπορικά αγαθά"
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:114
 msgid "medical"
-msgstr "ιατρικά θέματα"
+msgstr "ιατρικά"
 
 #: ../client/common/src/Categories.py:114
 msgid "Medical websites"
-msgstr "Ιστότοποι σχετικοί με ιατρικά θέματα"
+msgstr "Ιατρικοί ιστότοποι"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:116
 msgid "mixed_adult"
-msgstr "περιεχόμενα για ενηλίκους"
+msgstr "μικτά για ε_νήλικες"
 
 #: ../client/common/src/Categories.py:116
 msgid "Mixed adult content sites"
-msgstr "Ιστότοποι που περιέχουν περιεχόμενο για ενήλικες"
+msgstr "Ιστότοποι με μικτό περιεχόμενο ενηλίκων"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:118
@@ -430,7 +430,7 @@ msgstr "κινητή τηλεφωνία"
 
 #: ../client/common/src/Categories.py:118
 msgid "Sites to do with mobile phones"
-msgstr "Ιστότοποι για συνδιαλέξεις και αποστολή μηνυμάτων με κινητά τηλέφωνα"
+msgstr "Ιστότοποι σχετικοί με κινητά τηλέφωνα"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:120
@@ -439,44 +439,43 @@ msgstr "γυμνισμός"
 
 #: ../client/common/src/Categories.py:120
 msgid "Sites that contain nude pictures and/or promote a nude lifestyle"
-msgstr ""
-"Ιστότοποι που περιέχουν εικόνες με γυμνά σώματα ή/και προωθούν τον γυμνισμό"
+msgstr "Ιστότοποι που περιέχουν γυμνές εικόνες ή/και προωθούν τον γυμνισμό"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:122
 msgid "news"
-msgstr "ενημέρωση"
+msgstr "εισήσεις"
 
 #: ../client/common/src/Categories.py:122
 msgid "News sites"
-msgstr "Ιστότοποι ενημέρωσης"
+msgstr "Ιστότοποι ειδήσεων"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:124
 msgid "onlineauctions"
-msgstr "online δημοπρασίες"
+msgstr "δικτυακές δημοπρασίες"
 
 #: ../client/common/src/Categories.py:124
 msgid "Online auctions"
-msgstr "Ιστότοποι για πραγματοποίηση online δημοπρασιών"
+msgstr "Δικτυακές δημοπρασίες"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:126
 msgid "onlinegames"
-msgstr "online παιχνίδια"
+msgstr "δικτυακά παιχνίδια"
 
 #: ../client/common/src/Categories.py:126
 msgid "Online gaming sites"
-msgstr "Ιστότοποι που παρέχουν online παιχνίδια"
+msgstr "Ιστότοποι δικτυακών παιχνιδιών"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:128
 msgid "onlinepayment"
-msgstr "online πληρωμές"
+msgstr "δικτυακές πληρωμές"
 
 #: ../client/common/src/Categories.py:128
 msgid "Online payment sites"
-msgstr "Ιστότοποι για online πληρωμές"
+msgstr "Ιστότοποι για δικτυακές πληρωμές"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:130
@@ -485,7 +484,7 @@ msgstr "προσωπικά οικονομικά"
 
 #: ../client/common/src/Categories.py:130
 msgid "Personal finance sites"
-msgstr "Ιστότοποι για τη διευθέτηση προσωπικών οικονομικών ζητημάτων"
+msgstr "Ιστότοποι προσωπικών οικονομικών"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:132
@@ -494,17 +493,17 @@ msgstr "κατοικίδια"
 
 #: ../client/common/src/Categories.py:132
 msgid "Pet sites"
-msgstr "Ιστότοποι για κατοικίδια ζώα"
+msgstr "Ιστότοποι κατοικιδίων"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:134
 msgid "phishing"
-msgstr "phishing"
+msgstr "ψάρεμα"
 
 #: ../client/common/src/Categories.py:134
 msgid "Sites attempting to trick people into giving out private information."
 msgstr ""
-"Ιστότοποι που εξαπατούν τους χρήστες ώστε να δώσουν προσωπικές πληροφορίες"
+"Ιστότοποι που εξαπατούν τους χρήστες ώστε να δώσουν προσωπικές πληροφορίες."
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:136
@@ -513,18 +512,16 @@ msgstr "πορνογραφία"
 
 #: ../client/common/src/Categories.py:136
 msgid "Pornography"
-msgstr "Πορνογραφικοί ιστότοποι"
+msgstr "Πορνογραφία"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:138
 msgid "proxy"
-msgstr "διαμεσολαβητές"
+msgstr "μεσολαβητές"
 
 #: ../client/common/src/Categories.py:138
 msgid "Sites with proxies to bypass filters"
-msgstr ""
-"Ιστότοποι με διακομιστές για την παράκαμψη του φιλτραρίσματος των "
-"περιεχομένων του διαδικτύου"
+msgstr "Ιστότοποι με μεσολαβητές για την παράκαμψη φίλτρων"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:140
@@ -533,7 +530,7 @@ msgstr "ράδιο"
 
 #: ../client/common/src/Categories.py:140
 msgid "non-news related radio and television"
-msgstr "Ραδιόφωνο και τηλεόραση που δεν σχετίζονται με την ενημέρωση"
+msgstr "ραδιόφωνο και τηλεόραση που δεν σχετίζονται με ειδήσεις"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:142
@@ -542,17 +539,16 @@ msgstr "θρησκεία"
 
 #: ../client/common/src/Categories.py:142
 msgid "Sites promoting religion"
-msgstr "Ιστότοποι που προσηλυτίζουν σε θρησκείες, αιρέσεις, κλπ."
+msgstr "Ιστότοποι που προβάλλουν θρησκείες"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:144
 msgid "ringtones"
-msgstr "ringtones"
+msgstr "ήχοι κλήσεων"
 
 #: ../client/common/src/Categories.py:144
 msgid "Sites containing ring tones, games, pictures and other"
-msgstr ""
-"Ιστότοποι που περιέχουν ringtones, παιχνίδια, εικόνες και άλλο παρόμοιο υλικό"
+msgstr "Ιστότοποι που περιέχουν ήχους κλήσεων, παιχνίδια, εικόνες και άλλα"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:146
@@ -561,7 +557,7 @@ msgstr "μηχανές αναζήτησης"
 
 #: ../client/common/src/Categories.py:146
 msgid "Search engines such as google"
-msgstr "Μηχανές αναζήτησης"
+msgstr "Μηχανές αναζήτησης όπως google"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:148
@@ -570,7 +566,7 @@ msgstr "σέκτες"
 
 #: ../client/common/src/Categories.py:148
 msgid "Sites about eligious groups"
-msgstr "Ιστότοποι για ομάδες που σχετίζονται με τη θρησκεία"
+msgstr "Ιστότοποι για θρησκευτικές ομάδες"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:150
@@ -580,8 +576,8 @@ msgstr "σεξουαλικότητα"
 #: ../client/common/src/Categories.py:150
 msgid "Sites dedicated to sexuality, possibly including adult material"
 msgstr ""
-"Ιστότοποι αφιερωμένοι στη σεξουαλικότητα, πιθανόν με περιεχόμενο που "
-"απευθύνεται μόνο σε ενήλικους"
+"Ιστότοποι αφιερωμένοι στη σεξουαλικότητα, πιθανόν με περιεχόμενο για "
+"ενήλικους"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:152
@@ -590,7 +586,7 @@ msgstr "ψώνια"
 
 #: ../client/common/src/Categories.py:152
 msgid "Shopping sites"
-msgstr "Ιστότοποι για αγορά αγαθών"
+msgstr "Ιστότοποι για ψώνια"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:154
@@ -604,7 +600,7 @@ msgstr "Ιστότοποι κοινωνικής δικτύωσης"
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:156
 msgid "sportnews"
-msgstr "αθλητικά νέα"
+msgstr "αθλητικές ειδήσεις"
 
 #: ../client/common/src/Categories.py:156
 msgid "Sport news sites"
@@ -613,31 +609,33 @@ msgstr "Ιστότοποι με αθλητικά νέα"
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:158
 msgid "sports"
-msgstr "αθλητισμός"
+msgstr "αθλητικά"
 
 #: ../client/common/src/Categories.py:158
 msgid "All sport sites"
-msgstr "Όλα οι ιστότοποι που σχετίζονται με τον αθλητισμό"
+msgstr "Αθλητικοί ιστότοποι"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:160
 msgid "spyware"
-msgstr "spyware"
+msgstr "κατασκοπευτικό λογισμικό"
 
 #: ../client/common/src/Categories.py:160
 msgid "Sites who run or have spyware software to download"
-msgstr "Ιστότοποι που εκτελούν ή παρέχουν spyware για λήψη"
+msgstr ""
+"Ιστότοποι που εκτελούν ή παρέχουν λογισμικό κατασκοπευτικό λογισμικό για "
+"μεταφόρτωση"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:162
 msgid "updatesites"
-msgstr "ενημέρωση λογισμικού"
+msgstr "τόποι ενημέρωσης"
 
 #: ../client/common/src/Categories.py:162
 msgid "Sites where software updates are downloaded from including virus sigs"
 msgstr ""
-"Ιστότοποι απ' όπου μπορεί κανείς να κατεβάσει ενημερώσεις λογισμικού, οι "
-"οποίες περιέχουν υπογραφές ιών"
+"Τόποι όπου μεταφορτώνονται ενημερώσεις λογισμικού συμπεριλαμβάνοντας "
+"υπογραφές ιών"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:164
@@ -669,7 +667,7 @@ msgstr "Ιστότοποι που φιλοξενούν αρχεία μολυσμ
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:170
 msgid "warez"
-msgstr "warez"
+msgstr "warez (πειρατεία)"
 
 #: ../client/common/src/Categories.py:170
 msgid "Sites with illegal pirate software"
@@ -678,12 +676,11 @@ msgstr "Ιστότοποι με παράνομο πειρατικό λογισμ
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:172
 msgid "weather"
-msgstr "πρόγνωση καιρού"
+msgstr "καιρός"
 
 #: ../client/common/src/Categories.py:172
 msgid "Weather news sites and weather related"
-msgstr ""
-"Ιστότοποι για την πρόγνωση του καιρού ή άλλη ενημέρωση σχετική με αυτόν"
+msgstr "Ιστότοποι για τον καιρό και άλλα σχετικά"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:174
@@ -692,16 +689,16 @@ msgstr "όπλα"
 
 #: ../client/common/src/Categories.py:174
 msgid "Sites detailing or selling weapons"
-msgstr "Ιστότοποι που παρέχουν πληροφόρηση ή/και πωλούν οπλισμό"
+msgstr "Ιστότοποι που παρέχουν πληροφόρηση ή πωλούν οπλισμό"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:176
 msgid "webmail"
-msgstr "webmail"
+msgstr "ηλεκτρονικό ταχυδρομείο"
 
 #: ../client/common/src/Categories.py:176
 msgid "Just webmail sites"
-msgstr "Ιστότοποι για ηλεκτρονική αλλογραφία"
+msgstr "Ιστότοποι για ηλεκτρονική αλληλογραφία"
 
 #. To translators : This string is a category name or a category description
 #: ../client/common/src/Categories.py:178
@@ -714,13 +711,14 @@ msgid "Contains site specifically 100% suitable for kids"
 msgstr "Ιστότοποι με περιεχόμενο 100% κατάλληλο για παιδιά"
 
 #: ../client/common/src/Utils.py:94
-#, fuzzy
 msgid "Nanny Admin Tools requires Admin user"
-msgstr "Κονσόλα διαχείρισης του Nanny - %s"
+msgstr "Τα εργαλεία διαχείρισης Nanny απαιτούν διαχειριστή"
 
 #: ../client/common/src/Utils.py:95
 msgid "To run any Nanny Admin Tool you must to be admin of the system."
 msgstr ""
+"Για εκτέλεση οποιουδήποτε εργαλείου διαχείρισης Nanny, πρέπει να είσαστε "
+"διαχειριστής του συστήματος."
 
 #: ../client/common/src/DBusClient.py:81
 msgid "NannyDaemon unavailable"
@@ -732,227 +730,444 @@ msgid ""
 "Please try to reactivate it."
 msgstr ""
 "Ο δαίμονας του Nanny δεν έχει ενεργοποιηθεί ή δεν δουλεύει κατάλληλα.\n"
-"Παρακαλώ προσπαθήστε να τον ενεργοποιήσετε."
+"Παρακαλούμε, προσπαθήστε να τον ενεργοποιήσετε ξανά."
 
 #: ../client/gnome/admin/data/nanny-admin-console.desktop.in.h:1
-msgid "Nanny parental control admin console"
-msgstr "Κονσόλα διαχείρισης γονικού ελέγχου του Nanny"
-
-#: ../client/gnome/admin/data/nanny-admin-console.desktop.in.h:2
 msgid "Parental Control"
 msgstr "Γονικός έλεγχος"
 
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:1
-msgid "0"
-msgstr ""
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:2
-#: ../client/gnome/admin/data/ui/nbm_pbl_dialog.ui.h:1
-msgid ""
-"<b>You don't have admin privileges</b>\n"
-"Click this button if you want to make changes."
-msgstr ""
-"<b>Δεν έχετε δικαιώματα διαχειριστή</b>\n"
-"Πιέστε αυτό το πλήκτρο εάν θέλετε να κάνετε αλλαγές."
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:4
-msgid "Configure _chores & rewards"
-msgstr ""
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:5
-#, fuzzy
-msgid "Configure web filtering"
-msgstr "Χρήση φιλτραρίσματος περιεχομένων διαδικτύου"
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:6
-msgid "Force logoff"
-msgstr ""
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:7
-msgid "Force user either to log off or buy extra time after desktop is blocked"
-msgstr ""
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:8
-msgid "Instant messaging"
-msgstr "Άμεσα μηνύματα"
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:9
-msgid "Mail client"
-msgstr "Πελάτης ηλεκτρονικής αλληλογραφίας"
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:10
-msgid "PC use time"
-msgstr "Χρόνος χρήσης του υπολογιστή"
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:11
-msgid "Use the computer"
-msgstr "Χρήση του υπολογιστή"
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:12
-msgid "Use the instant messaging"
-msgstr "Χρήση των άμεσων μηνυμάτων"
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:13
-msgid "Use the mail client"
-msgstr "Χρήση του πελάτη ηλεκτρονικής αλληλογραφίας"
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:14
-msgid "Use the web browser"
-msgstr "Χρήση του περιηγητή διαδικτύου"
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:15
-msgid "Web browser"
-msgstr "Περιηγητής διαδικτύου"
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:16
-msgid "hours a day"
-msgstr "ώρες ανά ημέρα"
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:17
-#, fuzzy
-msgid "hours to"
-msgstr "ώρες ανά ημέρα"
-
-#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:18
-msgid "that's left today"
-msgstr ""
-
-#: ../client/gnome/admin/data/ui/nac_wcf_edit_dialog.ui.h:1
-#, fuzzy
-msgid "All the fields are mandatory, so please fill all of them.\t"
-msgstr ""
-"<span color=\"red\">Όλα τα πεδία είναι υποχρεωτικά. Παρακαλώ συμπληρώστε τα "
-"όλα.</span>"
-
-#: ../client/gnome/admin/data/ui/nac_wcf_edit_dialog.ui.h:2
-#: ../client/gnome/admin/data/ui/nac_chores_edit_dialog.ui.h:1
-#: ../client/gnome/admin/data/ui/nbm_pbl_edit_dialog.ui.h:1
-msgid "Description:"
-msgstr "Περιγραφή:"
-
-#: ../client/gnome/admin/data/ui/nac_wcf_edit_dialog.ui.h:3
-#: ../client/gnome/admin/data/ui/nbm_pbl_edit_dialog.ui.h:2
-msgid "Name:"
-msgstr "Όνομα:"
-
-#: ../client/gnome/admin/data/ui/nac_wcf_edit_dialog.ui.h:4
-msgid "URL:"
-msgstr "URL:"
-
-#: ../client/gnome/admin/data/ui/nac_wcf_dialog.ui.h:1
-msgid "Allowed sites"
-msgstr "Επιτρεπόμενοι ιστότοποι"
-
-#: ../client/gnome/admin/data/ui/nac_wcf_dialog.ui.h:2
-msgid "Blacklists"
-msgstr "Μαύρες λίστες"
-
-#: ../client/gnome/admin/data/ui/nac_wcf_dialog.ui.h:3
-#, fuzzy
-msgid "Enable _web content filtering"
-msgstr "Χρήση φιλτραρίσματος περιεχομένων διαδικτύου"
-
-#: ../client/gnome/admin/data/ui/nac_wcf_dialog.ui.h:4
-msgid "Forbidden sites"
-msgstr "Απαγορευμένοι ιστότοποι"
-
-#: ../client/gnome/admin/data/ui/nac_wcf_dialog.ui.h:5
-msgid "_Update"
-msgstr ""
+#: ../client/gnome/admin/data/nanny-admin-console.desktop.in.h:2
+msgid "Nanny parental control admin console"
+msgstr "Κονσόλα διαχείρισης γονικού ελέγχου του Nanny"
 
 #: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:1
-msgid "Amount of contracted but unfinished chores allowed"
-msgstr ""
-
-#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:2
-msgid "Assign chores"
-msgstr ""
-
-#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:3
-msgid "Chores in progress"
-msgstr ""
-
-#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:4
-msgid "Enable rewarding time for _contracting chores"
-msgstr ""
-
-#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:5
-msgid "Finished chores"
-msgstr ""
-
-#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:6
-msgid ""
-"If the amount happens to exceed this value, user cannot contract more chores"
-msgstr ""
-
-#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:7
 msgid ""
 "Select an entry and press this button to add or remove chores to or from "
 "user&apos;s enabled chores list"
 msgstr ""
+"Επιλέξτε μια καταχώριση και πατήστε αυτό το κουμπί για πρόσθεση ή αφαίρεση "
+"μικροεργασιών σε ή από την ενεργή λίστα μικροεργασιών του χρήστη"
 
-#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:8
+#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:2
 msgid ""
 "Select an entry and press this button to add or remove chores to or from "
 "user's enabled chores list"
 msgstr ""
+"Επιλέξτε μια καταχώριση και πατήστε αυτό το κουμπί για πρόσθεση ή αφαίρεση "
+"μικροεργασιών σε ή από την ενεργή λίστα μικροεργασιών του χρήστη"
+
+#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:3
+msgid "Assign chores"
+msgstr "Ανάθεση μικροεργασιών"
+
+#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:4
+msgid "_Finish"
+msgstr "_Τερματισμός"
+
+#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:5
+msgid "Chores in progress"
+msgstr "Μικροεργασίες σε εξέλιξη"
+
+#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:6
+msgid "Finished chores"
+msgstr "Ολοκληρωμένες μικροεργασίες"
+
+#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:7
+msgid "Enable rewarding time for _contracting chores"
+msgstr "Ενεργοποίηση χρόνου ανταμοιβής για _ανάληψη μικροεργασιών"
+
+#: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:8
+msgid "Amount of contracted but unfinished chores allowed"
+msgstr ""
+"Αριθμός επιτρεπόμενων μικροεργασιών που συμφωνήθηκαν αλλά είναι ατελείωτες"
 
 #: ../client/gnome/admin/data/ui/nac_chores_dialog.ui.h:9
-msgid "_Finish"
+msgid ""
+"If the amount happens to exceed this value, user cannot contract more chores"
 msgstr ""
+"Αν ο αριθμός συμβαίνει να ξεπερνά αυτήν την τιμή, ο χρήστης δεν μπορεί να "
+"αναλάβει περισσότερες μικροεργασίες"
 
 #. The time given for contracting the chore
-#: ../client/gnome/admin/data/ui/nac_chores_edit_dialog.ui.h:3
+#: ../client/gnome/admin/data/ui/nac_chores_edit_dialog.ui.h:2
 msgid "Reward:"
-msgstr ""
+msgstr "Ανταμοιβή:"
+
+#: ../client/gnome/admin/data/ui/nac_chores_edit_dialog.ui.h:3
+#: ../client/gnome/admin/data/ui/nac_wcf_edit_dialog.ui.h:2
+#: ../client/gnome/admin/data/ui/nbm_pbl_edit_dialog.ui.h:2
+msgid "Description:"
+msgstr "Περιγραφή:"
 
 #: ../client/gnome/admin/data/ui/nac_chores_edit_dialog.ui.h:4
+msgid "Title:"
+msgstr "Τίτλος:"
+
+#: ../client/gnome/admin/data/ui/nac_chores_edit_dialog.ui.h:5
 msgid ""
 "The chores with time rewards will be displayed as an option to obtain more "
 "usage time to user when the session time limit has been reached and blocking "
 "the session is initiated. User can contract the chore to get extra usage "
 "time immediately."
 msgstr ""
+"Οι μικροεργασίες με ανταμοιβές χρόνου θα εμφανίζονται ως επιλογή για "
+"επίτευξη περισσότερου χρόνου χρήσης όταν το όριο χρόνου συνεδρίας έχει "
+"φτάσει και η φραγή της συνεδρίας έχει αρχίσει. Ο χρήστης μπορεί να αναλάβει "
+"τη μικροδουλειά για να πάρει πρόσθετο χρόνο χρήσης αμέσως."
 
-#: ../client/gnome/admin/data/ui/nac_chores_edit_dialog.ui.h:5
-msgid "Title:"
+#: ../client/gnome/admin/data/ui/nac_wcf_dialog.ui.h:1
+msgid "Forbidden sites"
+msgstr "Απαγορευμένοι ιστότοποι"
+
+#: ../client/gnome/admin/data/ui/nac_wcf_dialog.ui.h:2
+msgid "Allowed sites"
+msgstr "Επιτρεπόμενοι τόποι"
+
+#: ../client/gnome/admin/data/ui/nac_wcf_dialog.ui.h:3
+msgid "_Update"
+msgstr "_Ενημέρωση"
+
+#: ../client/gnome/admin/data/ui/nac_wcf_dialog.ui.h:4
+msgid "Blacklists"
+msgstr "Μαύρες λίστες"
+
+#: ../client/gnome/admin/data/ui/nac_wcf_dialog.ui.h:5
+msgid "Enable _web content filtering"
+msgstr "Χρήση φιλτραρίσματος περιεχομένων _ιστού"
+
+#: ../client/gnome/admin/data/ui/nac_wcf_edit_dialog.ui.h:1
+msgid "URL:"
+msgstr "URL:"
+
+#: ../client/gnome/admin/data/ui/nac_wcf_edit_dialog.ui.h:3
+#: ../client/gnome/admin/data/ui/nbm_pbl_edit_dialog.ui.h:1
+msgid "Name:"
+msgstr "Όνομα:"
+
+#: ../client/gnome/admin/data/ui/nac_wcf_edit_dialog.ui.h:4
+msgid "All the fields are mandatory, so please fill all of them.\t"
+msgstr "Όλα τα πεδία είναι υποχρεωτικά, παρακαλούμε συμπληρώστε τα όλα."
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:1
+msgid "Use the computer"
+msgstr "Χρήση του υπολογιστή"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:2
+msgid "hours a day"
+msgstr "ώρες ανά ημέρα"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:3
+msgid "Force logoff"
+msgstr "Αναγκαστική αποσύνδεση"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:4
+msgid "Force user either to log off or buy extra time after desktop is blocked"
 msgstr ""
+"Εξαναγκασμός χρήστη είτε να αποσυνδεθεί είτε να αγοράσει πρόσθετο χρόνο μετά "
+"τη φραγή της επιφάνειας εργασίας"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:5
+msgid "hours to"
+msgstr "ώρες σε"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:6
+msgid "0"
+msgstr "0"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:7
+msgid "that's left today"
+msgstr "σήμερα απομένουν"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:8
+msgid "Configure _chores & rewards"
+msgstr "Ρύθμιση _μικροεργασιών & ανταμοιβών"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:9
+msgid "PC use time"
+msgstr "Χρόνος χρήσης του υπολογιστή"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:10
+msgid "Use the web browser"
+msgstr "Χρήση του περιηγητή ιστού"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:11
+msgid "Configure web filtering"
+msgstr "Ρύθμιση φιλτραρίσματος ιστού"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:12
+msgid "Web browser"
+msgstr "Περιηγητής ιστού"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:13
+msgid "Use the mail client"
+msgstr "Χρήση του πελάτη ηλεκτρονικής αλληλογραφίας"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:14
+msgid "Mail client"
+msgstr "Πελάτης ηλεκτρονικής αλληλογραφίας"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:15
+msgid "Use the instant messaging"
+msgstr "Χρήση των άμεσων μηνυμάτων"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:16
+msgid "Instant messaging"
+msgstr "Άμεσα μηνύματα"
+
+#: ../client/gnome/admin/data/ui/nanny_admin_console.ui.h:17
+#: ../client/gnome/admin/data/ui/nbm_pbl_dialog.ui.h:1
+msgid ""
+"<b>You don't have admin privileges</b>\n"
+"Click this button if you want to make changes."
+msgstr ""
+"<b>Δεν έχετε δικαιώματα διαχειριστή</b>\n"
+"Πιέστε αυτό το πλήκτρο αν θέλετε να κάνετε αλλαγές."
+
+#: ../client/gnome/admin/data/ui/nanny_desktop_blocker.ui.h:1
+msgid ""
+"<span size=\"25000\" foreground=\"white\"><b>Your computer usage time is up "
+"now</b></span>"
+msgstr ""
+"<span size=\"25000\" foreground=\"white\"><b>Έχετε εξαντλήσει τον χρόνο χρήσης "
+"του υπολογιστή.</b></span>"
+
+#: ../client/gnome/admin/data/ui/nanny_desktop_blocker.ui.h:2
+msgid ""
+"<span foreground=\"white\"><big>You can still have a moment for closing the "
+"documents or applications</big></span>"
+msgstr ""
+"<span foreground=\"white\"><big>Υπάρχει διαθέσιμος χρόνος αν θέλετε να "
+"κλείσετε έγγραφα ή εφαρμογές.</big></span>"
+
+#: ../client/gnome/admin/data/ui/nanny_desktop_blocker.ui.h:3
+msgid "Give me more time"
+msgstr "Δώστε μου περισσότερο χρόνο"
+
+#: ../client/gnome/admin/data/ui/nanny_desktop_blocker.ui.h:4
+msgid "Five minutes, please"
+msgstr "Πέντε λεπτά, παρακαλώ"
+
+#: ../client/gnome/admin/data/ui/nanny_desktop_blocker.ui.h:5
+msgid "Close session now"
+msgstr "Κλείσιμο συνεδρίας τώρα"
 
 #: ../client/gnome/admin/data/ui/nbm_pbl_dialog.ui.h:3
 msgid "Import..."
 msgstr "Εισαγωγή..."
 
-#: ../client/gnome/admin/data/ui/nanny_desktop_blocker.ui.h:1
-#, fuzzy
+#: ../client/gnome/admin/src/AdminConsole.py:52
+msgid "Nanny daemon is not started"
+msgstr "Ο δαίμονας του Nanny δεν ξεκίνησε"
+
+#: ../client/gnome/admin/src/AdminConsole.py:53
+msgid "To use the parental control, please start up the daemon."
+msgstr ""
+"Για να χρησιμοποιήσετε τον γονικό έλεγχο, παρακαλώ εκκινήστε τον δαίμονα."
+
+#. FACE
+#: ../client/gnome/admin/src/AdminConsole.py:200
+msgid "Users"
+msgstr "Χρήστες"
+
+#: ../client/gnome/admin/src/AdminConsole.py:389
+msgid "User's configuration has been saved"
+msgstr "Οι ρυθμίσεις χρήστη έχουν αποθηκευτεί"
+
+#: ../client/gnome/admin/src/AdminConsole.py:415
+#, python-format
+msgid "Nanny Admin Console - %s"
+msgstr "Κονσόλα διαχείρισης του Nanny - %s"
+
+#: ../client/gnome/admin/src/AdminConsole.py:418
+msgid "Nanny Admin Console"
+msgstr "Κονσόλα διαχείρισης του Nanny"
+
+#: ../client/gnome/admin/src/AdminConsole.py:584
+msgid "You have made changes"
+msgstr "Έχετε πραγματοποιήσει αλλαγές"
+
+#: ../client/gnome/admin/src/AdminConsole.py:585
 msgid ""
-"<span foreground=\"white\"><big>You can still have a moment for closing the "
-"documents or applications</big></span>"
+"If you don't press the 'Apply' button, your changes will be lost.\n"
+"Are you sure?"
 msgstr ""
-"<span foreground=\"white\"><big>Υπάρχει διαθέσιμος χρόνος εάν θέλετε να "
-"κλείσετε έγγραφα ή εφαρμογές.</big></span>"
+"Εάν δεν πιέσετε το πλήκτρο 'Εφαρμογή', οι αλλαγές θα χαθούν.\n"
+"Είστε βέβαιος;"
 
-#: ../client/gnome/admin/data/ui/nanny_desktop_blocker.ui.h:2
-#, fuzzy
+#: ../client/gnome/admin/src/BlacklistManager.py:39
+msgid "Blacklist Filter Configuration"
+msgstr "Ρύθμιση φίλτρου μαύρης λίστας"
+
+#: ../client/gnome/admin/src/BlacklistManager.py:114
+#, python-format
 msgid ""
-"<span size=\"25000\" foreground=\"white\"><b>Your computer usage time is up "
-"now</b></span>"
+"<b>%s (Read only)</b>\n"
+"   %s"
 msgstr ""
-"<span size=\"25000\" foreground=\"white\"><b>Έχετε εξαντλήσει τον χρόνο "
-"χρήσης του υπολογιστή.</b></span>"
+"<b>%s (Μόνο ανάγνωση)</b>\n"
+"   %s"
 
-#: ../client/gnome/admin/data/ui/nanny_desktop_blocker.ui.h:3
-#, fuzzy
-msgid "Close session now"
-msgstr "κλείσιμο συνεδρίας"
+#: ../client/gnome/admin/src/BlacklistManager.py:156
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:629
+msgid "<b>Are you sure you want to delete this blacklist?</b>"
+msgstr "<b>Είστε βέβαιος ότι θέλετε να διαγράψετε αυτή τη μαύρη λίστα;</b>"
 
-#: ../client/gnome/admin/data/ui/nanny_desktop_blocker.ui.h:4
-#, fuzzy
-msgid "Five minutes, please"
-msgstr "5 λεπτά, παρακαλώ"
-
-#: ../client/gnome/admin/data/ui/nanny_desktop_blocker.ui.h:5
-msgid "Give me more time"
+#: ../client/gnome/admin/src/BlacklistManager.py:157
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:630
+msgid ""
+"This action will remove all the user configuration linked to the blacklist."
 msgstr ""
+"Αυτή η ενέργεια θα αφαιρέσει όλες τις ρυθμίσεις του χρήστη που σχετίζονται "
+"με τη μαύρη λίστα."
+
+#: ../client/gnome/admin/src/ConfigureChoresDialog.py:42
+msgid "Chores & Rewards Configuration"
+msgstr "Ρύθμιση μικροεργασιών & ανταμοιβών"
+
+#: ../client/gnome/admin/src/ConfigureChoresDialog.py:388
+msgid "Add chore description"
+msgstr "Προσθήκη περιγραφής μικροδουλειάς"
+
+#: ../client/gnome/admin/src/ConfigureChoresDialog.py:420
+msgid "Edit chore description"
+msgstr "Επεξεργασία περιγραφής μικροεργασίας"
+
+#: ../client/gnome/admin/src/ConfigureChoresDialog.py:459
+msgid "<b>Are you sure you want to delete this chore description entry?</b>"
+msgstr ""
+"<b>Είστε βέβαιος ότι θέλετε να διαγράψετε αυτήν την καταχώριση περιγραφής "
+"μικροεργασίας;</b>"
+
+#: ../client/gnome/admin/src/ConfigureChoresDialog.py:460
+msgid "This action will remove all the user chores linked to the description."
+msgstr ""
+"Αυτή η ενέργεια θα αφαιρέσει όλες τις μικροεργασίες χρήστη που σχετίζονται "
+"με την περιγραφή."
+
+#: ../client/gnome/admin/src/ConfigureChoresDialog.py:517
+#: ../client/gnome/admin/src/ConfigureChoresDialog.py:526
+msgid "Error while deleting the chore entry"
+msgstr "Σφάλμα κατά τη διαγραφή της καταχώρισης μικροεργασίας"
+
+#: ../client/gnome/admin/src/ConfigureChoresDialog.py:518
+#: ../client/gnome/admin/src/ConfigureChoresDialog.py:527
+msgid ""
+"Some error has occured while deleting the chore entry.\n"
+"Please try again."
+msgstr ""
+"Κάποιο σφάλμα προέκυψε κατά τη διαγραφή της καταχώρισης μικροεργασίας.\n"
+"Παρακαλώ, ξαναπροσπαθήστε."
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:39
+msgid "Web Content Filter Configuration"
+msgstr "Ρύθμιση φιλτραρίσματος περιεχομένων ιστού"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:187
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:204
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:225
+msgid "Unknown Blacklist Name"
+msgstr "Άγνωστο όνομα μαύρης λίστας"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:206
+#, python-format
+msgid "(version : %s)"
+msgstr "(έκδοση: %s)"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:209
+msgid "There is an update available"
+msgstr "Υπάρχει διαθέσιμη ενημέρωση"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:211
+#, python-format
+msgid "Downloading information (%s%%)"
+msgstr "Μεταφορτώνονται πληροφορίες (%s%%)"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:213
+#, python-format
+msgid "Installing blacklist (%s%%)"
+msgstr "Εγκαθίσταται μαύρη λίστα (%s%%)"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:215
+#, python-format
+msgid "Updating blacklist (%s%%)"
+msgstr "Ενημερώνεται η μαύρη λίστα (%s%%)"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:282
+msgid "Add blacklist entry"
+msgstr "Προσθήκη καταχώρισης μαύρης λίστας"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:309
+msgid "Add whitelist entry"
+msgstr "Προσθήκη καταχώρισης λευκής λίστας"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:345
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:356
+msgid "Error while importing list from the Internet"
+msgstr "Σφάλμα κατά την εισαγωγή λιστών από το διαδίκτυο"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:346
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:357
+msgid ""
+"Some error has occured while downloading the list.\n"
+"Please verify the URL and try again."
+msgstr ""
+"Κάποιο σφάλμα συνέβη κατά τη μεταφόρτωση των λιστών.\n"
+"Παρακαλώ επιβεβαιώστε το URL και ξαναπροσπαθήστε."
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:364
+msgid "Edit custom blacklist entry"
+msgstr "Επεξεργασία καταχώρισης προσαρμοσμένης μαύρης λίστας"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:447
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:469
+msgid "Are you sure you want to delete this filter?"
+msgstr "Είστε σίγουρος ότι θέλετε να διαγράψετε αυτό το φίλτρο;"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:448
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:470
+msgid "You will not be able to undo this action."
+msgstr "Δεν θα μπορείτε να αναιρέσετε αυτή την ενέργεια."
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:455
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:477
+msgid "Removing filter. Please, wait..."
+msgstr "Αφαίρεση φίλτρου. Παρακαλώ, περιμένετε..."
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:496
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:507
+msgid "Error while deleting filters"
+msgstr "Σφάλμα κατά τη διαγραφή φίλτρων"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:497
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:508
+msgid ""
+"Some error has occured while deleting filters.\n"
+"Please try again."
+msgstr ""
+"Κάποιο σφάλμα συνέβη κατά τη διαγραφή των φίλτρων.\n"
+"Παρακαλώ, ξαναπροσπαθήστε."
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:547
+msgid "<b>Select all the categories</b>"
+msgstr "<b>Επιλογή όλων των κατηγοριών</b>"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:599
+msgid "Introduce the nannycentral repository url"
+msgstr "Εισάγετε το url αποθετηρίου του κεντρικού nanny"
+
+#: ../client/gnome/admin/src/ConfigureProxyDialog.py:607
+msgid ""
+"It's something like http://www.nannycentral.info/blacklist/blacklist.json ..."
+msgstr ""
+"Είναι κάτι σαν http://www.nannycentral.info/blacklist/blacklist.json ..."
+
+#. it could be nice to use 1:06 style layout instead of 1,1
+#. maybe switch to minutes after all
+#. time.strftime(_('%H:%M'), time.gmtime(int(line[3])*60))
+#: ../client/gnome/admin/src/DesktopBlocker.py:133
+#, python-format
+msgid " (%s min)"
+msgstr " (%s λεπτά)"
 
 #: ../client/gnome/admin/src/ScheduleCalendar.py:310
 msgid "Monday"
@@ -982,251 +1197,37 @@ msgstr "Σάββατο"
 msgid "Sunday"
 msgstr "Κυριακή"
 
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:39
-msgid "Web Content Filter Configuration"
-msgstr "Ρύθμιση φιλτραρίσματος περιεχομένων διαδικτύου"
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:187
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:204
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:225
-#, fuzzy
-msgid "Unknown Blacklist Name"
-msgstr "Η μαύρη λίστα εισήχθη"
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:206
-#, python-format
-msgid "(version : %s)"
-msgstr ""
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:209
-msgid "There is an update available"
-msgstr ""
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:211
-#, fuzzy, python-format
-msgid "Downloading information (%s%%)"
-msgstr "Λήψη αρχείου (%s%%)"
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:213
-#, python-format
-msgid "Installing blacklist (%s%%)"
-msgstr ""
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:215
-#, python-format
-msgid "Updating blacklist (%s%%)"
-msgstr ""
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:282
-msgid "Add blacklist entry"
-msgstr ""
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:309
-#, fuzzy
-msgid "Add whitelist entry"
-msgstr "λευκές λίστες"
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:345
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:356
-msgid "Error while importing list from the Internet"
-msgstr "Σφάλμα κατά την εισαγωγή λιστών από το διαδίκτυο"
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:346
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:357
-msgid ""
-"Some error has occured while downloading the list.\n"
-"Please verify the URL and try again."
-msgstr ""
-"Κάποιο σφάλμα συνέβη κατά τη λήψη των λιστών.\n"
-"Παρακαλώ επιβεβαιώστε το URL και ξαναπροσπαθήστε."
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:364
-msgid "Edit custom blacklist entry"
-msgstr ""
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:447
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:469
-msgid "Are you sure you want to delete this filter?"
-msgstr "Είστε σίγουρος ότι θέλετε να διαγράψετε αυτό το φίλτρο;"
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:448
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:470
-msgid "You will not be able to undo this action."
-msgstr "Δεν θα μπορείτε να αναιρέσετε αυτή την ενέργεια."
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:455
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:477
-msgid "Removing filter. Please, wait..."
-msgstr "Αφαίρεση φίλτρου. Παρακαλώ, περιμένετε..."
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:496
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:507
-msgid "Error while deleting filters"
-msgstr "Σφάλμα κατά τη διαγραφή των φίλτρων"
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:497
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:508
-msgid ""
-"Some error has occured while deleting filters.\n"
-"Please try again."
-msgstr ""
-"Κάποιο σφάλμα συνέβη κατά τη διαγραφή των φίλτρων.\n"
-"Παρακαλώ, ξαναπροσπαθήστε."
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:547
-msgid "<b>Select all the categories</b>"
-msgstr "<b>Επιλογή όλων των κατηγοριών</b>"
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:599
-msgid "Introduce the nannycentral repository url"
-msgstr ""
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:607
-msgid ""
-"It's something like http://www.nannycentral.info/blacklist/blacklist.json ..."
-msgstr ""
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:629
-#: ../client/gnome/admin/src/BlacklistManager.py:156
-msgid "<b>Are you sure you want to delete this blacklist?</b>"
-msgstr "<b>Είστε βέβαιος ότι θέλετε να διαγράψετε αυτή τη μαύρη λίστα;</b>"
-
-#: ../client/gnome/admin/src/ConfigureProxyDialog.py:630
-#: ../client/gnome/admin/src/BlacklistManager.py:157
-msgid ""
-"This action will remove all the user configuration linked to the blacklist."
-msgstr ""
-"Αυτή η ενέργεια θα αφαιρέσει όλες τις ρυθμίσεις του χρήστη που σχετίζονται "
-"με τη μαύρη λίστα."
-
-#: ../client/gnome/admin/src/ConfigureChoresDialog.py:42
-#, fuzzy
-msgid "Chores & Rewards Configuration"
-msgstr "Ρύθμιση φιλτραρίσματος περιεχομένων διαδικτύου"
-
-#: ../client/gnome/admin/src/ConfigureChoresDialog.py:388
-#, fuzzy
-msgid "Add chore description"
-msgstr "Περιγραφή:"
-
-#: ../client/gnome/admin/src/ConfigureChoresDialog.py:420
-msgid "Edit chore description"
-msgstr ""
-
-#: ../client/gnome/admin/src/ConfigureChoresDialog.py:459
-#, fuzzy
-msgid "<b>Are you sure you want to delete this chore description entry?</b>"
-msgstr "<b>Είστε βέβαιος ότι θέλετε να διαγράψετε αυτή τη μαύρη λίστα;</b>"
-
-#: ../client/gnome/admin/src/ConfigureChoresDialog.py:460
-#, fuzzy
-msgid "This action will remove all the user chores linked to the description."
-msgstr ""
-"Αυτή η ενέργεια θα αφαιρέσει όλες τις ρυθμίσεις του χρήστη που σχετίζονται "
-"με τη μαύρη λίστα."
-
-#: ../client/gnome/admin/src/ConfigureChoresDialog.py:517
-#: ../client/gnome/admin/src/ConfigureChoresDialog.py:526
-#, fuzzy
-msgid "Error while deleting the chore entry"
-msgstr "Σφάλμα κατά τη διαγραφή των φίλτρων"
-
-#: ../client/gnome/admin/src/ConfigureChoresDialog.py:518
-#: ../client/gnome/admin/src/ConfigureChoresDialog.py:527
-#, fuzzy
-msgid ""
-"Some error has occured while deleting the chore entry.\n"
-"Please try again."
-msgstr ""
-"Κάποιο σφάλμα συνέβη κατά τη διαγραφή των φίλτρων.\n"
-"Παρακαλώ, ξαναπροσπαθήστε."
-
-#: ../client/gnome/admin/src/AdminConsole.py:52
-msgid "Nanny daemon is not started"
-msgstr "Ο δαίμονας του Nanny δεν ξεκίνησε"
-
-#: ../client/gnome/admin/src/AdminConsole.py:53
-msgid "To use the parental control, please start up the daemon."
-msgstr ""
-"Για να χρησιμοποιήσετε τον γονικό έλεγχο, παρακαλώ εκκινήστε τον δαίμονα."
-
-#. FACE
-#: ../client/gnome/admin/src/AdminConsole.py:200
-msgid "Users"
-msgstr "Χρήστες"
-
-#: ../client/gnome/admin/src/AdminConsole.py:389
-#, fuzzy
-msgid "User's configuration has been saved"
-msgstr "Οι ρυθμίσεις σας αποθηκεύτηκαν"
-
-#: ../client/gnome/admin/src/AdminConsole.py:415
-#, python-format
-msgid "Nanny Admin Console - %s"
-msgstr "Κονσόλα διαχείρισης του Nanny - %s"
-
-#: ../client/gnome/admin/src/AdminConsole.py:418
-msgid "Nanny Admin Console"
-msgstr "Κονσόλα διαχείρισης του Nanny "
-
-#: ../client/gnome/admin/src/AdminConsole.py:584
-msgid "You have made changes"
-msgstr "Έχετε πραγματοποιήσει αλλαγές"
-
-#: ../client/gnome/admin/src/AdminConsole.py:585
-msgid ""
-"If you don't press the 'Apply' button, your changes will be lost.\n"
-"Are you sure?"
-msgstr ""
-"Εάν δεν πιέσετε το πλήκτρο 'Εφαρμογή', οι αλλαγές θα χαθούν.\n"
-"Είστε βέβαιος;"
-
-#: ../client/gnome/admin/src/BlacklistManager.py:39
-msgid "Blacklist Filter Configuration"
-msgstr "Ρύθμιση φίλτρου μαύρης λίστας"
-
-#: ../client/gnome/admin/src/BlacklistManager.py:114
-#, python-format
-msgid ""
-"<b>%s (Read only)</b>\n"
-"   %s"
-msgstr ""
-"<b>%s (Μόνο ανάγνωση)</b>\n"
-"   %s"
-
 #: ../client/gnome/nanny-firefox-win32/nanny-firefox-blocker:97
 msgid "Firefox proxy settings change detected"
-msgstr ""
+msgstr "Αναγνωρίστηκε αλλαγή ρυθμίσεων μεσολαβητή Firefox"
 
 #: ../client/gnome/nanny-firefox-win32/nanny-firefox-blocker:98
 msgid ""
 "You can't change the proxy settings because you are under parental control."
 msgstr ""
+"Δεν μπορείτε να αλλάξετε τις ρυθμίσεις μεσολαβητή επειδή είσαστε κάτω από "
+"γονικό έλεγχο."
 
 #: ../client/gnome/systray/src/SystrayNanny.py:53
-#, fuzzy
 msgid "your session"
-msgstr "κλείσιμο συνεδρίας"
+msgstr "η συνεδρία σας"
 
 #: ../client/gnome/systray/src/SystrayNanny.py:54
-#, fuzzy
 msgid "web browser"
-msgstr "Περιηγητής διαδικτύου"
+msgstr "περιηγητής ιστού"
 
 #: ../client/gnome/systray/src/SystrayNanny.py:55
-#, fuzzy
 msgid "e-mail"
 msgstr "ηλεκτρονική αλληλογραφία"
 
 #: ../client/gnome/systray/src/SystrayNanny.py:56
-#, fuzzy
-msgid "instant messanger"
-msgstr "Άμεσα μηνύματα"
+msgid "instant messenger"
+msgstr "άμεσα μηνύματα"
 
 #: ../client/gnome/systray/src/SystrayNanny.py:174
-#, fuzzy, python-format
+#, python-format
 msgid "The access to %(app)s granted."
-msgstr "Σε %(time)s η πρόσβαση στην %(app)s θα παρέχεται."
+msgstr "Η πρόσβαση στην %(app)s δόθηκε."
 
 #. To translators: In x-minutes the access to <app> will be granted
 #: ../client/gnome/systray/src/SystrayNanny.py:177
@@ -1235,9 +1236,9 @@ msgid "In %(time)s the access to %(app)s will be granted."
 msgstr "Σε %(time)s η πρόσβαση στην %(app)s θα παρέχεται."
 
 #: ../client/gnome/systray/src/SystrayNanny.py:180
-#, fuzzy, python-format
+#, python-format
 msgid "The access to %(app)s denied."
-msgstr "Σε %(time)s η πρόσβαση στην %(app)s θα απαγορεύεται."
+msgstr "Η πρόσβαση στην %(app)s απαγορεύτηκε."
 
 #. To translators: In x-minutes the access to <app> will be denied
 #: ../client/gnome/systray/src/SystrayNanny.py:183
@@ -1278,8 +1279,8 @@ msgstr "Διαχείριση των ρυθμίσεων του γονικού ε�
 #: ../daemon/data/org.gnome.nanny.policy.in.h:2
 msgid "You need to authenticate to modify the parental control configuration"
 msgstr ""
-"Θα πρέπει να πιστοποιηθείτε ώστε να είστε σε θέση να επεξεργαστείτε τις "
-"ρυθμίσεις του γονικού ελέγχου."
+"Θα πρέπει να πιστοποιηθείτε για να τροποποιήσετε τις ρυθμίσεις του γονικού "
+"ελέγχου."
 
 #: ../daemon/src/DansGuardianImporter.py:63
 msgid "Blacklist imported"
@@ -1292,17 +1293,17 @@ msgstr "Το αρχείο του Nanny δημιουργήθηκε"
 #: ../daemon/src/DansGuardianImporter.py:79
 #, python-format
 msgid "Downloading file (%s%%)"
-msgstr "Λήψη αρχείου (%s%%)"
+msgstr "Μεταφόρτωση αρχείου (%s%%)"
 
 #: ../daemon/src/DansGuardianImporter.py:271
 #, python-format
 msgid "Importing domains [category: %s] (%s%%)"
-msgstr "Εισαγωγή domains [category: %s] (%s%%)"
+msgstr "Εισαγωγή τομέων [Κατηγορία: %s] (%s%%)"
 
 #: ../daemon/src/DansGuardianImporter.py:287
 #, python-format
 msgid "Importing urls [category: %s] (%s%%)"
-msgstr "Εισαγωγή urls [category: %s] (%s%%)"
+msgstr "Εισαγωγή urls [Κατηγορία: %s] (%s%%)"
 
 #~ msgid "BlackLists"
 #~ msgstr "Μαύρες λίστες"
