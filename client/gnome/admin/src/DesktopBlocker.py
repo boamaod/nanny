@@ -49,8 +49,6 @@ import traceback # for debugging
 import nanny.client.common.DBusClient
 dbus_client = nanny.client.common.DBusClient ()
 
-session_type = "ubuntu"
-
 class DesktopBlocker(gtk.Window):
 
     def __init__(self):
@@ -64,8 +62,10 @@ class DesktopBlocker(gtk.Window):
         
         self.uid = str(os.getuid())
 
+        self.session_type = "ubuntu"
+
         if len(sys.argv) > 1:
-            session_type = sys.argv[1]
+            self.session_type = sys.argv[1]
 
         gtk.Window.__init__(self, type=gtk.WINDOW_POPUP)
         
@@ -283,14 +283,14 @@ class DesktopBlocker(gtk.Window):
                 smgr_name = "org.gnome.SessionManager"
                 smgr_path = "/org/gnome/SessionManager"
                 
-                if session_type in ("Lubuntu", "Lxde"): 
+                if self.session_type in ("Lubuntu", "Lxde"): 
                     smgr_name = "org.lxde.SessionManager"
                     smgr_path = "/org/lxde/SessionManager"
-                #elif session_type in ("ubuntu", "ubuntu-2d", "gnome-classic", "gnome-shell"):
+                #elif self.session_type in ("ubuntu", "ubuntu-2d", "gnome-classic", "gnome-shell"):
                 #    smgr_name = "org.gnome.SessionManager"
                 #    smgr_path = "/org/gnome/SessionManager"
                 
-                print session_type, smgr_name, smgr_path
+                print self.session_type, smgr_name, smgr_path
                 
                 d = dbus.SessionBus()
                 smgr_obj = d.get_object(smgr_name, smgr_path)
@@ -307,28 +307,6 @@ class DesktopBlocker(gtk.Window):
 
         sys.exit(0)
 
-    def __close_the_dialog_by_timeout(self):
-        if self.already_closed:
-            return False
-            
-        if self.close_button_countdown >= 0:
-        
-            if self.close_button_countdown < 30:
-                b = self.close_button
-                b.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse("indianred"))
-                l = b.get_children()[0]
-                l.modify_fg(gtk.STATE_NORMAL, gtk.gdk.color_parse("white"))                                                                                             
-                l.modify_fg(gtk.STATE_PRELIGHT, gtk.gdk.color_parse("black"))
-
-            self.close_button.set_label(self.close_button_text + " (%s)" % self.close_button_countdown)
-            self.close_button_countdown -= 1
-            gobject.timeout_add(1000, self.__close_the_dialog_by_timeout)
-            return False
-        else:
-            self.close_button.set_label(self.close_button_text)
-            print "TIMEOUT"
-            self.__close_button_clicked_cb(None, None)
-            
     def __close_session_fallback(self):
         """Fallback for the moments org.gnome.SessionManager doesn't connect"""
         for proc in psutil.process_iter():
