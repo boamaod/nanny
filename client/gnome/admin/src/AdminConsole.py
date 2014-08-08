@@ -241,7 +241,10 @@ class AdminConsole(gobject.GObject):
             else:
                 if os.name == "posix" :
                     icon_theme = gtk.icon_theme_get_default()
-                    pixbuf = icon_theme.load_icon ('stock_person', 50, gtk.ICON_LOOKUP_USE_BUILTIN)
+                    try:
+                        pixbuf = icon_theme.load_icon ('stock_person', 50, gtk.ICON_LOOKUP_USE_BUILTIN)
+                    except:
+                        pixbuf = icon_theme.load_icon ('stock_home', 50, gtk.ICON_LOOKUP_USE_BUILTIN)
                 elif os.name == "nt" :
                     pixbuf = None
 
