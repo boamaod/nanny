@@ -32,7 +32,9 @@ from twisted.internet import reactor, threads
 from subprocess import Popen, PIPE
 import time
 
-import gtop
+import psutil
+
+import traceback # for debugging
 
 (
 SESSION_APPID,
@@ -79,7 +81,9 @@ class LinuxSessionBlocker(gobject.GObject) :
 
     def __launch_blocker_to_badboy(self, user_id):
         x11_display = self.__get_user_session_display(user_id)
-        if x11_display != None :
+
+        if x11_display is not None :
+            print "[LinuxSessionFiltering] badboy blocking user %s for display %s" % (user_id, x11_display)
             user_name = self.quarterback.usersmanager.get_username_by_uid(user_id)
             reactor.callInThread(self.__launch_blocker_thread, user_id, user_name, x11_display, self)
         else:
@@ -88,50 +92,48 @@ class LinuxSessionBlocker(gobject.GObject) :
 
     def __launch_blocker(self, user_id):
         x11_display = self.__get_user_session_display(user_id)
-        
-        if x11_display != None :
+
+        if x11_display is not None :
             self.block_status.append(user_id)
-            print "[LinuxSessionFiltering] blocking user %s" % user_id
+            print "[LinuxSessionFiltering] blocking user %s for display %s" % (user_id, x11_display)
             user_name = self.quarterback.usersmanager.get_username_by_uid(user_id)
             reactor.callInThread(self.__launch_blocker_thread, user_id, user_name, x11_display, self)
         
     def __launch_blocker_thread(self, user_id, user_name, x11_display, linuxsb):
         try:
-            proclist = gtop.proclist(gtop.PROCLIST_KERN_PROC_UID, int(user_id))
+            proclist = []
+            for proc in psutil.process_iter():
+                if proc.uids[0] != int(user_id):
+                    continue
+                proclist.append(proc)
+            proclist.reverse() # start from the newest process
             env_lang_var = 'C'
-            if len(proclist) > 0:
-                for proc in proclist:
-                    lang_var = Popen('cat /proc/%s/environ | tr "\\000" "\\n" | grep ^LANG= ' % proc , 
-                                     shell=True, stdout=PIPE).stdout.readline().strip("\n")
-                    if len(lang_var) > 0 :
-                        env_lang_var = lang_var.replace("LANG=","")
-                        break
-            cmd = ['su', user_name, '-c', 
-                   'LANG=%s DISPLAY=%s %s &>> /var/tmp/desktop-blocker-%s.log' % (env_lang_var, x11_display, self.sb, user_id)]
-                   
-            print cmd
+            for proc in proclist:
+                lang_var = Popen('cat /proc/%s/environ | tr "\\000" "\\n" | grep ^LANG= ' % proc.pid , 
+                                 shell=True, stdout=PIPE).stdout.readline().strip("\n")
+                if len(lang_var) > 0 :
+                    env_lang_var = lang_var.replace("LANG=","")
+                    break
 
             # hack to start after desktop has actually been loaded
             # see https://bugs.launchpad.net/nanny/+bug/916788 etc
             #
             # BOH
             env_session_type = None
-            if len(proclist) > 0:
-                proclist.reverse() # find the last instance with session defined
-                for proc in proclist:
-                    session_type = Popen('cat /proc/%s/environ | tr "\\000" "\\n" | grep ^DESKTOP_SESSION= ' % proc , 
-                                     shell=True, stdout=PIPE).stdout.readline().strip("\n")
-                    if len(session_type) > 0 :
-                        env_session_type = session_type.replace("DESKTOP_SESSION=","")
-                        break
+            for proc in proclist:
+                session_type = Popen('cat /proc/%s/environ | tr "\\000" "\\n" | grep ^DESKTOP_SESSION= ' % proc.pid, 
+                                 shell=True, stdout=PIPE).stdout.readline().strip("\n")
+                if len(session_type) > 0 :
+                    env_session_type = session_type.replace("DESKTOP_SESSION=","")
+                    break
             
             print "DESKTOP_SESSION=" + env_session_type
             
-            DEFAULT_SLEEP_TIME = 36
+            DEFAULT_SLEEP_TIME = 42
             SLEEP_INTERVAL = 2
-            INTERVALS = INTERVALS_COUNT = 18
+            INTERVALS = INTERVALS_COUNT = 21
             
-            if env_session_type == "ubuntu" or env_session_type == "ubuntu-2d":
+            if env_session_type in ("ubuntu", "ubuntu-2d"):
                 while os.system("pgrep -fl unity-panel-service | grep -v pgrep") != 0 and INTERVALS > 0: 
                     INTERVALS = INTERVALS - 1
                     print "Waiting for the desktop to start", INTERVALS
@@ -150,7 +152,7 @@ class LinuxSessionBlocker(gobject.GObject) :
                     time.sleep(SLEEP_INTERVAL)
                 SLEEP_INTERVAL = DEFAULT_SLEEP_TIME - (INTERVALS_COUNT*SLEEP_INTERVAL - INTERVALS*SLEEP_INTERVAL)
 
-            elif env_session_type == "Lubuntu" or env_session_type == "LXDE":
+            elif env_session_type in ("Lubuntu", "LXDE"):
                 while os.system("pgrep -fl lxpanel | grep -v pgrep") != 0 and INTERVALS > 0: 
                     INTERVALS = INTERVALS - 1
                     print "Waiting for the desktop to start", INTERVALS
@@ -163,8 +165,13 @@ class LinuxSessionBlocker(gobject.GObject) :
             print "Taking a %s second snooze before starting..." % SLEEP_INTERVAL
             time.sleep(SLEEP_INTERVAL)
             # EOH
-            
+
+            cmd = ['su', user_name, '-c', 
+                   'LANG=%s DISPLAY=%s %s %s &>> /var/tmp/desktop-blocker-%s.log'
+                   % (env_lang_var, x11_display, self.sb, env_session_type, user_id)]
+            print cmd
             p = Popen(cmd)
+            
             print "[LinuxSessionFiltering] launching blocker (pid : %s)" % p.pid
 
             while p.poll() == None :
@@ -183,18 +190,21 @@ class LinuxSessionBlocker(gobject.GObject) :
 
     def __get_user_session_display(self, user_id):
         d = dbus.SystemBus()
-        manager = dbus.Interface(d.get_object("org.freedesktop.ConsoleKit", 
-                                              "/org/freedesktop/ConsoleKit/Manager"), 
-                                 "org.freedesktop.ConsoleKit.Manager")
+        login1_object = d.get_object("org.freedesktop.login1", "/org/freedesktop/login1")
+        manager_iface = dbus.Interface(login1_object, "org.freedesktop.login1.Manager")
 
-        sessions = manager.GetSessionsForUnixUser(int(user_id))
-        for session_name in sessions :
-            session = dbus.Interface(d.get_object("org.freedesktop.ConsoleKit", session_name),
-                                     "org.freedesktop.ConsoleKit.Session")
-            x11_display = session.GetX11Display()
-            if x11_display != "":
+        sessions = manager_iface.ListSessions()
+        for session in sessions :
+            if session[1] != user_id :
+                    continue
+            session_object = d.get_object("org.freedesktop.login1", session[4])
+            props_iface = dbus.Interface(session_object, 'org.freedesktop.DBus.Properties')
+            x11_display = props_iface.Get("org.freedesktop.login1.Session", 'Display')
+            active = props_iface.Get("org.freedesktop.login1.Session", 'Active')
+
+            if x11_display != "" and active:
                 return x11_display
-        
+
         return None
 
 class LinuxSessionFiltering(gobject.GObject) :

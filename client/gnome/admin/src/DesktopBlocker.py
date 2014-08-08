@@ -40,7 +40,7 @@ import nanny.client.common
 import nanny.client.gnome.admin
 import time
 
-import gtop
+import psutil
 
 from subprocess import Popen, PIPE
 
@@ -48,6 +48,8 @@ import traceback # for debugging
 
 import nanny.client.common.DBusClient
 dbus_client = nanny.client.common.DBusClient ()
+
+session_type = "ubuntu"
 
 class DesktopBlocker(gtk.Window):
 
@@ -61,7 +63,10 @@ class DesktopBlocker(gtk.Window):
             print "Nanny daemon not found"
         
         self.uid = str(os.getuid())
-            
+
+        if len(sys.argv) > 1:
+            session_type = sys.argv[1]
+
         gtk.Window.__init__(self, type=gtk.WINDOW_POPUP)
         
         self.set_property("skip-taskbar-hint", True)
@@ -74,7 +79,7 @@ class DesktopBlocker(gtk.Window):
         self.bg_pixbuf = None
         
         screen = gtk.gdk.screen_get_default()
-        x0,y0,x1,y1 = screen.get_monitor_geometry(0)
+        #x0,y0,x1,y1 = screen.get_monitor_geometry(0)
         
         self.set_default_size(screen.get_width(), screen.get_height())
         self.set_decorated(False)
@@ -243,6 +248,28 @@ class DesktopBlocker(gtk.Window):
         
         return False
 
+    def __close_the_dialog_by_timeout(self):
+        if self.already_closed:
+            return False
+            
+        if self.close_button_countdown >= 0:
+        
+            if self.close_button_countdown < 30:
+                b = self.close_button
+                b.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse("indianred"))
+                l = b.get_children()[0]
+                l.modify_fg(gtk.STATE_NORMAL, gtk.gdk.color_parse("white"))                                                                                             
+                l.modify_fg(gtk.STATE_PRELIGHT, gtk.gdk.color_parse("black"))
+
+            self.close_button.set_label(self.close_button_text + " (%s)" % self.close_button_countdown)
+            self.close_button_countdown -= 1
+            gobject.timeout_add(1000, self.__close_the_dialog_by_timeout)
+            return False
+        else:
+            self.close_button.set_label(self.close_button_text)
+            print "TIMEOUT"
+            self.__close_button_clicked_cb(None, None)
+
     def __close_button_clicked_cb(self, widget, data):
         """Universal method to close session"""
 
@@ -253,9 +280,21 @@ class DesktopBlocker(gtk.Window):
             windll.user32.ExitWindowsEx(0)
         elif os.name == "posix" :
             try:
+                smgr_name = "org.gnome.SessionManager"
+                smgr_path = "/org/gnome/SessionManager"
+                
+                if session_type in ("Lubuntu", "Lxde"): 
+                    smgr_name = "org.lxde.SessionManager"
+                    smgr_path = "/org/lxde/SessionManager"
+                #elif session_type in ("ubuntu", "ubuntu-2d", "gnome-classic", "gnome-shell"):
+                #    smgr_name = "org.gnome.SessionManager"
+                #    smgr_path = "/org/gnome/SessionManager"
+                
+                print session_type, smgr_name, smgr_path
+                
                 d = dbus.SessionBus()
-                smgr_obj = d.get_object("org.gnome.SessionManager", "/org/gnome/SessionManager")
-                session_manager = dbus.Interface(smgr_obj, "org.gnome.SessionManager")
+                smgr_obj = d.get_object(smgr_name, smgr_path)
+                session_manager = dbus.Interface(smgr_obj, smgr_name)
                 session_manager.Logout(1)
             except:
                 # The following occasionally happens:
@@ -292,13 +331,20 @@ class DesktopBlocker(gtk.Window):
             
     def __close_session_fallback(self):
         """Fallback for the moments org.gnome.SessionManager doesn't connect"""
-        proclist = gtop.proclist(gtop.PROCLIST_KERN_PROC_UID, int(self.uid))
-        for proc in proclist:
-            if len(gtop.proc_args(proc))==0:
+        for proc in psutil.process_iter():
+            if proc.uids[0] != int(self.uid):
                 continue
-            if gtop.proc_args(proc)[0] == "x-session-manager" or gtop.proc_args(proc)[0] == "/usr/bin/x-session-manager" or gtop.proc_args(proc)[0] == "/usr/bin/gnome-session" or gtop.proc_args(proc)[0] == "gnome-session" or gtop.proc_args(proc)[0] == "/usr/bin/lxsession" or gtop.proc_args(proc)[0] == "lxsession":
-                cmd = "kill -9 %s" % (proc)
-                print "Executing fallback:", cmd
-                Popen(cmd, shell=True, stdout=PIPE)
+            try:
+                cmd = proc.cmdline
+            except:
+                print "Process", proc, "command line not found"
+                continue
+            if len(cmd)==0:
+                continue
+            cmd = cmd[0]
+            if cmd == "x-session-manager" or cmd == "/usr/bin/x-session-manager" or cmd == "/usr/bin/gnome-session" or cmd == "gnome-session" or cmd == "/usr/bin/lxsession" or cmd == "lxsession":
+                exec_cmd = "kill -9 %s" % (proc.pid)
+                print "Executing fallback:", exec_cmd, cmd
+                Popen(exec_cmd, shell=True, stdout=PIPE)
 
 

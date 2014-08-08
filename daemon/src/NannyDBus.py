@@ -30,7 +30,8 @@ import os
 import dbus
 import dbus.service
 import dbus.mainloop.glib
-import gtop
+
+import psutil
 
 class PermissionDeniedByPolicy(dbus.DBusException):
     _dbus_error_name = 'org.gnome.nanny.PermissionDeniedByPolicy'
@@ -55,7 +56,7 @@ class NannyDBus(dbus.service.Object):
         gobject.timeout_add(1000, self.__polling_cb)
 
     def __polling_cb(self):
-        self.auth_pid_cache = list(set(gtop.proclist()).intersection(set(self.auth_pid_cache)))
+        self.auth_pid_cache = list(set(psutil.get_pid_list()).intersection(set(self.auth_pid_cache)))
         return True
 
     # Taken from Jockey 0.5.8.

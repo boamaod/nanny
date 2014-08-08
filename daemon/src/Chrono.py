@@ -26,7 +26,8 @@
 import gobject
 import os
 
-import gtop
+import psutil
+
 import pickle
 import datetime
 
@@ -66,18 +67,20 @@ class Chrono(gobject.GObject) :
         '''Callback that updates the used times of the categories.'''
         if block_status == False:
             app_list = self.__get_application_list(self.categories)
-            proclist = gtop.proclist(gtop.PROCLIST_KERN_PROC_UID, int(user_id))
-            
             if app_id == SESSION_APPID :
                 try:
                     d = dbus.SystemBus()
-                    manager = dbus.Interface(d.get_object("org.freedesktop.ConsoleKit", "/org/freedesktop/ConsoleKit/Manager"), 
-                                             "org.freedesktop.ConsoleKit.Manager")
-                    sessions = manager.GetSessionsForUnixUser(int(user_id))
-                    for session_name in sessions :
-                        session = dbus.Interface(d.get_object("org.freedesktop.ConsoleKit", session_name),
-                                                 "org.freedesktop.ConsoleKit.Session")
-                        x11_display = session.GetX11Display()
+                    login1_object = d.get_object("org.freedesktop.login1", "/org/freedesktop/login1")
+                    manager_iface = dbus.Interface(login1_object, "org.freedesktop.login1.Manager")
+
+                    sessions = manager_iface.ListSessions()
+                    for session in sessions :
+                        if session[1] != user_id :
+                                continue
+                        session_object = d.get_object("org.freedesktop.login1", session[4])
+                        props_iface = dbus.Interface(session_object, 'org.freedesktop.DBus.Properties')
+                        x11_display = props_iface.Get("org.freedesktop.login1.Session", 'Display')
+
                         if x11_display == "":
                             continue
                         self.quarterback.subtract_time(user_id, app_id)
@@ -86,10 +89,17 @@ class Chrono(gobject.GObject) :
                     print "Crash Chrono __update_cb"
             else:
                 category = self.categories[app_id]
-                for proc in proclist:
-                    if len(gtop.proc_args(proc)) > 0:
-                        process = gtop.proc_args(proc)[0]
-                        if self.is_a_controlled_app(process, category, app_list):
+                for proc in psutil.process_iter():
+                    if proc.uids[0] != user_id:
+                        continue
+                    cmd = ""
+                    try:
+                        cmd = psutil.Process(proc).cmdline
+                    except:
+                        print "Process", proc, "command line not found"
+                        continue
+                    if len(cmd)>0:
+                        if self.is_a_controlled_app(cmd[0], category, app_list):
                             self.quarterback.subtract_time(user_id, app_id)
                             break
 
