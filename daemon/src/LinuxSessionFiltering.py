@@ -30,8 +30,9 @@ import dbus
 from twisted.internet import reactor, threads
 
 from subprocess import Popen, PIPE
-import time
+from signal import SIGTERM
 
+import time
 import psutil
 
 import traceback # for debugging
@@ -57,12 +58,52 @@ class LinuxSessionBlocker(gobject.GObject) :
 
     def blocker_terminate_from_thread(self, user_id, ret):
         print "[LinuxSessionFiltering] self.blocker_terminate_from_thread %s %s" % (user_id, ret)
+
         if ret == 0:
             gobject.timeout_add(5000, self.__remove_block_status, user_id)
-        else:
+
+        elif ret == 222:
+            try:
+                d = dbus.SystemBus()
+                login1_object = d.get_object("org.freedesktop.login1", "/org/freedesktop/login1")
+                manager_iface = dbus.Interface(login1_object, "org.freedesktop.login1.Manager")
+
+                sessions = manager_iface.ListSessions()
+
+                for session in sessions:
+                    if session[1] != user_id:
+                        continue
+
+                    session_object = d.get_object("org.freedesktop.login1", session[4])
+                    props_iface = dbus.Interface(session_object, 'org.freedesktop.DBus.Properties')
+                    sess_type = props_iface.Get("org.freedesktop.login1.Session", 'Type')
+
+                    if sess_type == "x11" :
+                        print "kill", session_object
+                        session_object.Kill("all", SIGTERM)
+            except:
+            
+                print traceback.format_exc()
+
+                for proc in psutil.process_iter():
+                    if proc.uids[0] != user_id:
+                        continue
+                    try:
+                        cmd = proc.cmdline
+                    except:
+                        print "Process", proc, "command line not found"
+                        continue
+                    if len(cmd)==0:
+                        continue
+                    cmd = cmd[0]
+                    if cmd == "x-session-manager" or cmd == "/usr/bin/x-session-manager" or cmd == "/usr/bin/gnome-session" or cmd == "gnome-session" or cmd == "/usr/bin/lxsession" or cmd == "lxsession":
+                        exec_cmd = "kill -9 %s" % (proc.pid)
+                        print "Executing fallback:", exec_cmd, cmd
+                        Popen(exec_cmd, shell=True, stdout=PIPE)
+
+        elif ret == 223:
             print "[LinuxSessionFiltering] User or other try to kill blocker :)"
             gobject.timeout_add(5000, self.__launch_blocker_to_badboy, user_id)
-            
 
     def set_block(self, user_id, block_status):
         if block_status == True:
@@ -129,31 +170,31 @@ class LinuxSessionBlocker(gobject.GObject) :
             
             print "DESKTOP_SESSION=" + env_session_type
             
-            DEFAULT_SLEEP_TIME = 42
+            DEFAULT_SLEEP_TIME = 36
             SLEEP_INTERVAL = 2
-            INTERVALS = INTERVALS_COUNT = 21
+            INTERVALS = INTERVALS_COUNT = 18
             
             if env_session_type in ("ubuntu", "ubuntu-2d"):
-                while os.system("pgrep -fl unity-panel-service | grep -v pgrep") != 0 and INTERVALS > 0: 
+                while os.system("pgrep -u %i -fla unity-panel-service | grep -v pgrep" % user_id) != 0 and INTERVALS > 0: 
                     INTERVALS = INTERVALS - 1
                     print "Waiting for the desktop to start", INTERVALS
                     time.sleep(SLEEP_INTERVAL)
 
             elif env_session_type == "gnome-classic":
-                while os.system("pgrep -fl gnome-panel | grep -v pgrep") != 0 and INTERVALS > 0: 
+                while os.system("pgrep -u %i -fla gnome-panel | grep -v pgrep" % user_id) != 0 and INTERVALS > 0: 
                     INTERVALS = INTERVALS - 1
                     print "Waiting for the desktop to start", INTERVALS
                     time.sleep(SLEEP_INTERVAL)
 
             elif env_session_type == "gnome-shell":
-                while os.system("pgrep -fl gnome-shell | grep -v pgrep") != 0 and INTERVALS > 0: 
+                while os.system("pgrep -u %i -fla gnome-shell | grep -v pgrep" % user_id) != 0 and INTERVALS > 0: 
                     INTERVALS = INTERVALS - 1
                     print "Waiting for the desktop to start", INTERVALS
                     time.sleep(SLEEP_INTERVAL)
                 SLEEP_INTERVAL = DEFAULT_SLEEP_TIME - (INTERVALS_COUNT*SLEEP_INTERVAL - INTERVALS*SLEEP_INTERVAL)
 
             elif env_session_type in ("Lubuntu", "LXDE"):
-                while os.system("pgrep -fl lxpanel | grep -v pgrep") != 0 and INTERVALS > 0: 
+                while os.system("pgrep -u %i -fla lxpanel | grep -v pgrep" % user_id) != 0 and INTERVALS > 0: 
                     INTERVALS = INTERVALS - 1
                     print "Waiting for the desktop to start", INTERVALS
                     time.sleep(SLEEP_INTERVAL)
@@ -184,9 +225,12 @@ class LinuxSessionBlocker(gobject.GObject) :
 
             print "[LinuxSessionFiltering] blocker terminated by user interaction"
             threads.blockingCallFromThread(reactor, linuxsb.blocker_terminate_from_thread, user_id, p.poll())
+            
         except:
+        
             print "[LinuxSessionFiltering] blocker terminated by exception"
-            threads.blockingCallFromThread(reactor, linuxsb.blocker_terminate_from_thread, user_id, 1)
+            print traceback.format_exc()
+            threads.blockingCallFromThread(reactor, linuxsb.blocker_terminate_from_thread, user_id, 223)
 
     def __get_user_session_display(self, user_id):
         d = dbus.SystemBus()

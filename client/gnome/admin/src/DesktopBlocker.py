@@ -47,7 +47,6 @@ from subprocess import Popen, PIPE
 import traceback # for debugging
 
 import nanny.client.common.DBusClient
-dbus_client = nanny.client.common.DBusClient ()
 
 class DesktopBlocker(gtk.Window):
 
@@ -279,50 +278,5 @@ class DesktopBlocker(gtk.Window):
         if os.name == "nt" :
             windll.user32.ExitWindowsEx(0)
         elif os.name == "posix" :
-            try:
-                smgr_name = "org.gnome.SessionManager"
-                smgr_path = "/org/gnome/SessionManager"
-                
-                if self.session_type in ("Lubuntu", "Lxde"): 
-                    smgr_name = "org.lxde.SessionManager"
-                    smgr_path = "/org/lxde/SessionManager"
-                #elif self.session_type in ("ubuntu", "ubuntu-2d", "gnome-classic", "gnome-shell"):
-                #    smgr_name = "org.gnome.SessionManager"
-                #    smgr_path = "/org/gnome/SessionManager"
-                
-                print self.session_type, smgr_name, smgr_path
-                
-                d = dbus.SessionBus()
-                smgr_obj = d.get_object(smgr_name, smgr_path)
-                session_manager = dbus.Interface(smgr_obj, smgr_name)
-                session_manager.Logout(1)
-            except:
-                # The following occasionally happens:
-                #   DBusException: org.freedesktop.DBus.Error.ServiceUnknown: The name
-                #   org.gnome.SessionManager was not provided by any .service files
-                
-                #print traceback.format_exc()
-
-                self.__close_session_fallback()
-
-        sys.exit(0)
-
-    def __close_session_fallback(self):
-        """Fallback for the moments org.gnome.SessionManager doesn't connect"""
-        for proc in psutil.process_iter():
-            if proc.uids[0] != int(self.uid):
-                continue
-            try:
-                cmd = proc.cmdline
-            except:
-                print "Process", proc, "command line not found"
-                continue
-            if len(cmd)==0:
-                continue
-            cmd = cmd[0]
-            if cmd == "x-session-manager" or cmd == "/usr/bin/x-session-manager" or cmd == "/usr/bin/gnome-session" or cmd == "gnome-session" or cmd == "/usr/bin/lxsession" or cmd == "lxsession":
-                exec_cmd = "kill -9 %s" % (proc.pid)
-                print "Executing fallback:", exec_cmd, cmd
-                Popen(exec_cmd, shell=True, stdout=PIPE)
-
+            sys.exit(222)
 

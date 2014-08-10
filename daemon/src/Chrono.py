@@ -90,11 +90,11 @@ class Chrono(gobject.GObject) :
             else:
                 category = self.categories[app_id]
                 for proc in psutil.process_iter():
-                    if proc.uids[0] != user_id:
-                        continue
                     cmd = ""
                     try:
-                        cmd = psutil.Process(proc).cmdline
+                        if proc.uids[0] != user_id:
+                            continue
+                            cmd = psutil.Process(proc).cmdline
                     except:
                         print "Process", proc, "command line not found"
                         continue
