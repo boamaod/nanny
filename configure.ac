@@ -143,13 +143,13 @@ fi
 
 AM_CONDITIONAL(HAS_HACHOIR_REGEX, $PYTHON -c "$prog" 1>&AC_FD_CC 2>&AC_FD_CC)
 
-dnl check for python-gtop
+dnl check for python-psutil
 dnl -----------------------------------------
-AC_MSG_CHECKING(for python-gtop)
+AC_MSG_CHECKING(for python-psutil)
 prog="
 import sys
 try:
-  import gtop
+  import psutil
 except RuntimeError:
   sys.exit(0)
 except ImportError:
@@ -162,7 +162,7 @@ then
   AC_MSG_RESULT(found)
 else
   AC_MSG_RESULT(not found)
-  AC_MSG_ERROR([You need to have python-gtop installed])
+  AC_MSG_ERROR([You need to have python-psutil installed])
 fi
 
 dnl OS support

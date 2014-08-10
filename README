@@ -32,7 +32,7 @@ Gnome-Nanny currently requires:
    - twisted
    - python-imaging
    - python-hachoir-regex >= 1.0
-   - gtop
+   - psutil
    - pango
    - cairo
 
