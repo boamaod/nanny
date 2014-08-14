@@ -75,16 +75,16 @@ class Chrono(gobject.GObject) :
 
                     sessions = manager_iface.ListSessions()
                     for session in sessions :
-                        if session[1] != user_id :
+                        if session[1] != int(user_id) :
                                 continue
                         session_object = d.get_object("org.freedesktop.login1", session[4])
                         props_iface = dbus.Interface(session_object, 'org.freedesktop.DBus.Properties')
                         x11_display = props_iface.Get("org.freedesktop.login1.Session", 'Display')
+                        active = props_iface.Get("org.freedesktop.login1.Session", 'Active')
 
-                        if x11_display == "":
-                            continue
-                        self.quarterback.subtract_time(user_id, app_id)
-                        break
+                        if x11_display != "" and active:
+                            self.quarterback.subtract_time(user_id, app_id)
+                            break
                 except:
                     print "Crash Chrono __update_cb"
             else:
