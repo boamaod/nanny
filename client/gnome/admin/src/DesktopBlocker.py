@@ -60,11 +60,14 @@ class DesktopBlocker(gtk.Window):
             print "Nanny daemon not found"
         
         self.uid = str(os.getuid())
-
         self.session_type = "ubuntu"
+        self.badboy = False
 
         if len(sys.argv) > 1:
             self.session_type = sys.argv[1]
+
+        if len(sys.argv) > 2:
+            self.badboy = True
 
         gtk.Window.__init__(self, type=gtk.WINDOW_POPUP)
         
@@ -102,7 +105,7 @@ class DesktopBlocker(gtk.Window):
 
         self.close_button_text = self.close_button.get_label()
 
-        self.__setup_ui()
+        self.__setup_ui(not self.badboy)
 
     def __setup_ui(self, mercy_button=True):
 

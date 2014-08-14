@@ -59,10 +59,8 @@ class LinuxSessionBlocker(gobject.GObject) :
     def blocker_terminate_from_thread(self, user_id, ret):
         print "[LinuxSessionFiltering] self.blocker_terminate_from_thread %s %s" % (user_id, ret)
 
-        if ret == 0:
-            gobject.timeout_add(5000, self.__remove_block_status, user_id)
+        if ret == 222: #special code for calling to kill session
 
-        elif ret == 222:
             try:
                 d = dbus.SystemBus()
                 login1_object = d.get_object("org.freedesktop.login1", "/org/freedesktop/login1")
@@ -82,9 +80,7 @@ class LinuxSessionBlocker(gobject.GObject) :
                         print "kill", session_object
                         session_object.Kill("all", SIGTERM)
             except:
-            
                 print traceback.format_exc()
-
                 for proc in psutil.process_iter():
                     if proc.uids[0] != user_id:
                         continue
@@ -101,9 +97,14 @@ class LinuxSessionBlocker(gobject.GObject) :
                         print "Executing fallback:", exec_cmd, cmd
                         Popen(exec_cmd, shell=True, stdout=PIPE)
 
-        elif ret == 223:
+        elif ret > 100: # serious error codes
+
             print "[LinuxSessionFiltering] User or other try to kill blocker :)"
             gobject.timeout_add(5000, self.__launch_blocker_to_badboy, user_id)
+            
+            return
+
+        gobject.timeout_add(5000, self.__remove_block_status, user_id)
 
     def set_block(self, user_id, block_status):
         if block_status == True:
@@ -117,7 +118,10 @@ class LinuxSessionBlocker(gobject.GObject) :
 
     def __remove_block_status(self, user_id):
         print "[LinuxSessionFiltering] Remove block status to user_id :  %s" % (user_id)
-        self.block_status.pop(self.block_status.index(user_id))
+        try:
+            self.block_status.pop(self.block_status.index(user_id))
+        except:
+            pass
         return False
 
     def __launch_blocker_to_badboy(self, user_id):
@@ -126,7 +130,7 @@ class LinuxSessionBlocker(gobject.GObject) :
         if x11_display is not None :
             print "[LinuxSessionFiltering] badboy blocking user %s for display %s" % (user_id, x11_display)
             user_name = self.quarterback.usersmanager.get_username_by_uid(user_id)
-            reactor.callInThread(self.__launch_blocker_thread, user_id, user_name, x11_display, self)
+            reactor.callInThread(self.__launch_blocker_thread, user_id, user_name, x11_display, self, True)
         else:
             self.block_status.pop(self.block_status.index(user_id))
         return False
@@ -140,7 +144,7 @@ class LinuxSessionBlocker(gobject.GObject) :
             user_name = self.quarterback.usersmanager.get_username_by_uid(user_id)
             reactor.callInThread(self.__launch_blocker_thread, user_id, user_name, x11_display, self)
         
-    def __launch_blocker_thread(self, user_id, user_name, x11_display, linuxsb):
+    def __launch_blocker_thread(self, user_id, user_name, x11_display, linuxsb, badboy = False):
         try:
             proclist = []
             for proc in psutil.process_iter():
@@ -202,14 +206,15 @@ class LinuxSessionBlocker(gobject.GObject) :
             else:
                 print "Sleeping for %s seconds just like that..." % DEFAULT_SLEEP_TIME
                 time.sleep(DEFAULT_SLEEP_TIME)
+                env_session_type = "ubuntu"
 
             print "Taking a %s second snooze before starting..." % SLEEP_INTERVAL
             time.sleep(SLEEP_INTERVAL)
             # EOH
 
             cmd = ['su', user_name, '-c', 
-                   'LANG=%s DISPLAY=%s %s %s &>> /var/tmp/desktop-blocker-%s.log'
-                   % (env_lang_var, x11_display, self.sb, env_session_type, user_id)]
+                   'LANG=%s DISPLAY=%s %s %s %s &>> /var/tmp/desktop-blocker-%s.log'
+                   % (env_lang_var, x11_display, self.sb, env_session_type, "bad" if badboy else "", user_id)]
             print cmd
             p = Popen(cmd)
             
